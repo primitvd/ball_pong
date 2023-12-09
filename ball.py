@@ -11,3 +11,4 @@ class Ball(Turtle):
         self.shapesize(0.7,0.7)
         self.goto(0,-232)
         self.showturtle()
+        self.setheading(85)
