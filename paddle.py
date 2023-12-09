@@ -10,8 +10,8 @@ class Paddle(Turtle):
         self.shape("square")
         self.goto(0,-250)
         self.showturtle()
-        for x in range(1,50,1):
-            self.shapesize(1,x/10.0)
+        # for x in range(1,50,1):
+        #     self.shapesize(1,x/10.0)
         self.shapesize(1,5)
 
     def move_left(self):
