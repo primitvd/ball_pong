@@ -4,6 +4,9 @@ from paddle import Paddle
 from ball import Ball
 
 
+screen = Screen()
+# screen.tracer(0)
+
 border_left = Turtle()
 border_left.penup()
 border_left.shape("square")
@@ -34,7 +37,6 @@ block_obj = Block()
 ball = Ball()
  
 
-screen = Screen()
 
 
 pause = False
@@ -63,6 +65,7 @@ while blocks != []:
                 ball.setheading(-ball.heading())
             blocks.remove(block)
             block.hideturtle()
+            break
             # block.color("blue")
 
 
@@ -71,6 +74,8 @@ while blocks != []:
 
     if ball.xcor() > 280 or ball.xcor() < -280:
         ball.setheading(180-ball.heading())
+
+    # screen.update()
     
     if(abs(ball.xcor()-paddle.xcor())<50 and abs(ball.ycor()-paddle.ycor())<20):
         ball.setheading(abs(ball.towards(paddle)-ball.heading()))
@@ -81,13 +86,13 @@ print(screen)
 
 # print(blocks)
 
-for block in blocks:
-    if paddle.distance(block) < 20:
-        print("hit")
-        block.hideturtle()
-        blocks.remove(block)
-        ball.bounce_y()
-        ball.bounce_x()
+# for block in blocks:
+#     if paddle.distance(block) < 20:
+#         print("hit")
+#         block.hideturtle()
+#         blocks.remove(block)
+#         ball.bounce_y()
+#         ball.bounce_x()
 
 # while(screen):
 #     screen.exitonclick()
